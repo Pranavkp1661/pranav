@@ -50,6 +50,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:drawableStart="@drawable/ic_baseline_vpn_key_24"
+        android:drawableEnd="@drawable/ic_baseline_remove_red_eye_24"
+        android:backgroundTint="@color/black"
         android:drawableTint="@color/black"
         android:ems="10"
         android:hint="@string/password"

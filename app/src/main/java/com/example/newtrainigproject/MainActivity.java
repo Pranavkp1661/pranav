@@ -36,15 +36,17 @@ public class MainActivity extends AppCompatActivity {
 
     void checkdata() {
 
-        if (etUser == null||etUser.getText().toString().trim().equals("")||etUser.getText().toString().length()<3) {
+        if (etUser == null || etUser.getText().toString().trim().equals("") || etUser.getText().toString().length() < 3) {
             Toast t = Toast.makeText(this, "Enter a valid User Name", Toast.LENGTH_LONG);
             t.show();
-        }
-        if (etPassword == null||etPassword.getText().toString().trim().equals("")||etPassword.getText().toString().length()<6){
-            Toast t = Toast.makeText(this,"Enter a valid Password",Toast.LENGTH_LONG);
+        } else if (etPassword == null || etPassword.getText().toString().trim().equals("") || etPassword.getText().toString().length() < 6) {
+            Toast t = Toast.makeText(this, "Enter a valid Password", Toast.LENGTH_LONG);
             t.show();
-        }
+        } else {
+            Toast t = Toast.makeText(this, "validation success", Toast.LENGTH_LONG);
+            t.show();
 
+        }
 
     }
 }
