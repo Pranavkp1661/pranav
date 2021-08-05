@@ -23,4 +23,5 @@
     <string name="reading">Reading</string>
     <string name="agree_terms_and_conditions">Agree Terms And Conditions</string>
     <string name="register">Register</string>
+    <string name="new_registration">New Registration</string>
 </resources>
