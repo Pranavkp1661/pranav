@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".RegistrationActivity">
+    tools:context=".RegistrationActivity"
+    android:background="@color/reg_bg_color">
 
 
     <TextView
@@ -12,7 +13,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/registration_form"
-        android:textAllCaps="true" />
+        android:textAllCaps="true"
+        android:gravity="center"
+        android:textSize="30sp"/>
 
     <EditText
         android:id="@+id/etName"
@@ -20,7 +23,11 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/name"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:drawableStart="@drawable/ic_baseline_person_24"
+        android:drawableTint="@color/black"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp" />
 
     <EditText
         android:id="@+id/etPass"
@@ -28,7 +35,12 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/password"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:drawableEnd="@drawable/ic_baseline_remove_red_eye_24"
+        android:drawableTint="@color/black"
+        android:drawableStart="@drawable/ic_baseline_vpn_key_24"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"/>
 
     <EditText
         android:id="@+id/etEmail"
@@ -36,7 +48,11 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/email"
-        android:inputType="textEmailAddress" />
+        android:inputType="textEmailAddress"
+        android:drawableStart="@drawable/ic_baseline_email_24"
+        android:drawableTint="@color/black"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"/>
 
     <EditText
         android:id="@+id/etPhone"
@@ -44,8 +60,11 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/phone_number"
-        android:inputType="phone" />
-
+        android:inputType="phone"
+        android:drawableStart="@drawable/ic_baseline_phone_24"
+        android:drawableTint="@color/black"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp"/>
     <EditText
         android:id="@+id/etAddress"
         android:layout_width="match_parent"
@@ -69,7 +88,11 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Date Of Birth"
-        android:inputType="number" />
+        android:inputType="number"
+        android:drawableStart="@drawable/ic_baseline_calendar_today_24"
+        android:drawableTint="@color/black"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"/>
 
     <TextView
         android:id="@+id/tvGender"
@@ -141,7 +164,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/btRegister"
-        android:text="Register"/>
+        android:text="@string/register"/>
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
