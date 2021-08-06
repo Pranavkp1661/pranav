@@ -35,7 +35,7 @@ public class RegistrationActivity extends AppCompatActivity {
     int year;
     int month;
     int day;
-    Calendar myCalender=Calendar.getInstance();
+    Calendar myCalender = Calendar.getInstance();
     Context context;
 
     @Override
@@ -43,7 +43,7 @@ public class RegistrationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
         init();
-        context=this;
+        context = this;
         btRegister.setOnClickListener(view -> {
             if (etName.getText().toString().trim().equals("")) {
                 etName.setError("Enter valid Name");
@@ -57,49 +57,40 @@ public class RegistrationActivity extends AppCompatActivity {
             if (etPhone.getText().toString().trim().equals("")) {
                 etPhone.setError("Enter valid Phone Number");
             }
-            if (cbFootball.isChecked()){
-                Toast t= Toast.makeText(RegistrationActivity.this,"Foot Ball selected",Toast.LENGTH_SHORT);
-                t.show();
+            if (cbFootball.isChecked()) {
+                toastDislplay("Foot Ball selected");
 
             }
-            if (cbMovies.isChecked()){
-                Toast t= Toast.makeText(RegistrationActivity.this,"Movies selected",Toast.LENGTH_SHORT);
-                t.show();
+            if (cbMovies.isChecked()) {
+                toastDislplay("Movie selected");
 
             }
-            if (cbMusic.isChecked()){
-                Toast t= Toast.makeText(RegistrationActivity.this,"Music selected",Toast.LENGTH_SHORT);
-                t.show();
+            if (cbMusic.isChecked()) {
+                toastDislplay("Music selected");
 
             }
-            if (cbReading.isChecked()){
-                Toast t= Toast.makeText(RegistrationActivity.this,"Reading selected",Toast.LENGTH_SHORT);
-                t.show();
+            if (cbReading.isChecked()) {
+                toastDislplay("Reading selected");
 
             }
             if (!cbRegister.isChecked()) {
-                Toast t= Toast.makeText(RegistrationActivity.this,"please agree the terms and conditions",Toast.LENGTH_LONG);
-                t.show();
-            }
-            else{
-                Toast t= Toast.makeText(RegistrationActivity.this,"Registration success full",Toast.LENGTH_LONG);
-                t.show();
+                toastDislplay("Please agree the terms and conditions");
+            } else {
+                toastDislplay("Registration Success full ");
             }
 
         });
         rgGender.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
-                if (i==R.id.rtMale){
-                    Toast t= Toast.makeText(RegistrationActivity.this,"Male selected",Toast.LENGTH_LONG);
+                if (i == R.id.rtMale) {
+                    Toast t = Toast.makeText(RegistrationActivity.this, "Male selected", Toast.LENGTH_LONG);
                     t.show();
-                }
-                else if  (i==R.id.rtFemale){
-                    Toast t= Toast.makeText(RegistrationActivity.this,"Female selected ",Toast.LENGTH_LONG);
+                } else if (i == R.id.rtFemale) {
+                    Toast t = Toast.makeText(RegistrationActivity.this, "Female selected ", Toast.LENGTH_LONG);
                     t.show();
-                }
-                else if  (i==R.id.rtOther){
-                    Toast t= Toast.makeText(RegistrationActivity.this,"Other selected",Toast.LENGTH_LONG);
+                } else if (i == R.id.rtOther) {
+                    Toast t = Toast.makeText(RegistrationActivity.this, "Other selected", Toast.LENGTH_LONG);
                     t.show();
                 }
             }
@@ -110,20 +101,19 @@ public class RegistrationActivity extends AppCompatActivity {
                 DatePickerDialog datePickerDialog = new DatePickerDialog(RegistrationActivity.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                        year=i;
-                        month=i1;
-                        day=i2;
-                        myCalender.set(Calendar.DAY_OF_MONTH,day);
-                        myCalender.set(Calendar.MONTH,month);
-                        myCalender.set(Calendar.YEAR,year);
-                        etDob.setText(day+"/"+(month+1)+"/"+year);
+                        year = i;
+                        month = i1;
+                        day = i2;
+                        myCalender.set(Calendar.DAY_OF_MONTH, day);
+                        myCalender.set(Calendar.MONTH, month);
+                        myCalender.set(Calendar.YEAR, year);
+                        etDob.setText(day + "/" + (month + 1) + "/" + year);
 
                     }
-                },myCalender.get(Calendar.YEAR),myCalender.get(Calendar.MONTH),myCalender.get(Calendar.DAY_OF_MONTH));
+                }, myCalender.get(Calendar.YEAR), myCalender.get(Calendar.MONTH), myCalender.get(Calendar.DAY_OF_MONTH));
                 datePickerDialog.show();
             }
         });
-
 
 
     }
@@ -139,10 +129,16 @@ public class RegistrationActivity extends AppCompatActivity {
         btRegister = findViewById(R.id.btRegister);
         rgGender = findViewById(R.id.rgGender);
         cbMusic = findViewById(R.id.cbMusic);
-        cbMovies=findViewById(R.id.cbMovies);
-        cbFootball=findViewById(R.id.cbFootball);
-        cbRegister=findViewById(R.id.cbRegister);
-        cbReading=findViewById(R.id.cbReading);
+        cbMovies = findViewById(R.id.cbMovies);
+        cbFootball = findViewById(R.id.cbFootball);
+        cbRegister = findViewById(R.id.cbRegister);
+        cbReading = findViewById(R.id.cbReading);
+
+    }
+
+    private void toastDislplay(String message) {
+        Toast t = Toast.makeText(RegistrationActivity.this, message, Toast.LENGTH_LONG);
+        t.show();
 
     }
 }
