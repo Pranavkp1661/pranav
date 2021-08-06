@@ -3,11 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/NewFolder/NewTrainigProject/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.1" />
-        <entry key="..\:/NewFolder/NewTrainigProject/app/src/main/res/drawable/ic_baseline_remove_red_eye_24.xml" value="0.1" />
-        <entry key="..\:/NewFolder/NewTrainigProject/app/src/main/res/drawable/ic_baseline_vpn_key_24.xml" value="0.1" />
-        <entry key="..\:/NewFolder/NewTrainigProject/app/src/main/res/layout/activity_main.xml" value="0.22" />
-        <entry key="..\:/NewFolder/NewTrainigProject/app/src/main/res/layout/activity_registration.xml" value="0.22" />
+        <entry key="..\:/git test/pranavtestapp/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/git test/pranavtestapp/app/src/main/res/layout/activity_main_register.xml" value="0.165625" />
+        <entry key="..\:/git test/pranavtestapp/app/src/main/res/layout/activity_register.xml" value="0.22" />
+        <entry key="..\:/test/pranavtestapp/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/test/pranavtestapp/app/src/main/res/layout/activity_main_register.xml" value="0.11548913043478261" />
+        <entry key="..\:/test/pranavtestapp/app/src/main/res/layout/activity_register.xml" value="0.1" />
+        <entry key="..\:/test/pranavtestapp/app/src/main/res/layout/activity_registration.xml" value="0.22" />
       </map>
     </option>
   </component>

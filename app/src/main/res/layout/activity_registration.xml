@@ -27,7 +27,8 @@
         android:drawableStart="@drawable/ic_baseline_person_24"
         android:drawableTint="@color/black"
         android:paddingStart="10dp"
-        android:paddingEnd="10dp" />
+        android:paddingEnd="10dp"
+        android:imeOptions="flagNoExtractUi"/>
 
     <EditText
         android:id="@+id/etPass"
@@ -40,7 +41,8 @@
         android:drawableTint="@color/black"
         android:drawableStart="@drawable/ic_baseline_vpn_key_24"
         android:paddingStart="10dp"
-        android:paddingEnd="10dp"/>
+        android:paddingEnd="10dp"
+        android:imeOptions="flagNoExtractUi"/>
 
     <EditText
         android:id="@+id/etEmail"
@@ -52,7 +54,8 @@
         android:drawableStart="@drawable/ic_baseline_email_24"
         android:drawableTint="@color/black"
         android:paddingStart="10dp"
-        android:paddingEnd="10dp"/>
+        android:paddingEnd="10dp"
+        android:imeOptions="flagNoExtractUi"/>
 
     <EditText
         android:id="@+id/etPhone"
@@ -64,7 +67,8 @@
         android:drawableStart="@drawable/ic_baseline_phone_24"
         android:drawableTint="@color/black"
         android:paddingEnd="10dp"
-        android:paddingStart="10dp"/>
+        android:paddingStart="10dp"
+        android:imeOptions="flagNoExtractUi"/>
     <EditText
         android:id="@+id/etAddress"
         android:layout_width="match_parent"
@@ -72,7 +76,8 @@
         android:ems="10"
         android:hint="@string/address"
         android:inputType="textPersonName"
-        android:lines="5" />
+        android:lines="5"
+        android:imeOptions="flagNoExtractUi"/>
 
     <EditText
         android:id="@+id/etAge"
@@ -80,7 +85,8 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/age"
-        android:inputType="number" />
+        android:inputType="number"
+        android:imeOptions="flagNoExtractUi" />
 
     <EditText
         android:id="@+id/etDob"
@@ -88,11 +94,14 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="Date Of Birth"
+        android:clickable="false"
+        android:focusable="false"
         android:inputType="number"
         android:drawableStart="@drawable/ic_baseline_calendar_today_24"
         android:drawableTint="@color/black"
         android:paddingStart="10dp"
-        android:paddingEnd="10dp"/>
+        android:paddingEnd="10dp"
+        android:imeOptions="flagNoExtractUi"/>
 
     <TextView
         android:id="@+id/tvGender"
