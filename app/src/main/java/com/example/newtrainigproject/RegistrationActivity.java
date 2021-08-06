@@ -5,7 +5,6 @@ import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CalendarView;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -14,10 +13,16 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.time.Year;
 import java.util.Calendar;
 
 public class RegistrationActivity extends AppCompatActivity {
+    int year;
+    int month;
+    int day;
+
+
+    Calendar myCalender = Calendar.getInstance();
+    Context context;
     private EditText etName;
     private EditText etPass;
     private EditText etEmail;
@@ -32,11 +37,6 @@ public class RegistrationActivity extends AppCompatActivity {
     private CheckBox cbFootball;
     private CheckBox cbReading;
     private CheckBox cbRegister;
-    int year;
-    int month;
-    int day;
-    Calendar myCalender = Calendar.getInstance();
-    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,17 +45,27 @@ public class RegistrationActivity extends AppCompatActivity {
         init();
         context = this;
         btRegister.setOnClickListener(view -> {
+            int age;
+            try {
+                age = Integer.parseInt(etAge.getText().toString());
+            } catch (Exception e) {
+                e.printStackTrace();
+                age = 0;
+            }
             if (etName.getText().toString().trim().equals("")) {
                 etName.setError("Enter valid Name");
-            }
-            if (etPass.getText().toString().trim().equals("") || etPass.getText().toString().length() < 6) {
+            } else if (etPass.getText().toString().trim().equals("") || etPass.getText().toString().length() < 6) {
                 etPass.setError("Enter valid password");
-            }
-            if (etEmail.getText().toString().trim().equals("")) {
+            } else if (etEmail.getText().toString().trim().equals("")) {
                 etEmail.setError("Enter valid Email");
-            }
-            if (etPhone.getText().toString().trim().equals("")) {
+            } else if (etPhone.getText().toString().trim().equals("")) {
                 etPhone.setError("Enter valid Phone Number");
+            } else if (age == 0 || age > 120) {
+                etAge.setError("Enter correct age");
+            } else if (!cbRegister.isChecked()) {
+                toastDislplay("Please agree the terms and conditions");
+            } else {
+                toastDislplay("Registration Success full ");
             }
             if (cbFootball.isChecked()) {
                 toastDislplay("Foot Ball selected");
@@ -73,11 +83,7 @@ public class RegistrationActivity extends AppCompatActivity {
                 toastDislplay("Reading selected");
 
             }
-            if (!cbRegister.isChecked()) {
-                toastDislplay("Please agree the terms and conditions");
-            } else {
-                toastDislplay("Registration Success full ");
-            }
+
 
         });
         rgGender.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -107,7 +113,7 @@ public class RegistrationActivity extends AppCompatActivity {
                         myCalender.set(Calendar.DAY_OF_MONTH, day);
                         myCalender.set(Calendar.MONTH, month);
                         myCalender.set(Calendar.YEAR, year);
-                        etDob.setText(day + "/" + (month + 1) + "/" + year);
+                        etDob.setText( day + "/" + (month + 1) + "/" + year);
 
                     }
                 }, myCalender.get(Calendar.YEAR), myCalender.get(Calendar.MONTH), myCalender.get(Calendar.DAY_OF_MONTH));
