@@ -13,12 +13,18 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.newtrainigproject.database.DbLoginRegister;
+import com.example.newtrainigproject.model.LoginRegistrationModel;
+
 import java.util.Calendar;
 
 public class RegistrationActivity extends AppCompatActivity {
     int year;
     int month;
     int day;
+    int age=0;
+    String gender="nothing";
+    String hobbies="";
 
 
     Calendar myCalender = Calendar.getInstance();
@@ -37,15 +43,17 @@ public class RegistrationActivity extends AppCompatActivity {
     private CheckBox cbFootball;
     private CheckBox cbReading;
     private CheckBox cbRegister;
+    DbLoginRegister mDbLoginRegister;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
-        init();
         context = this;
+        init();
+        mDbLoginRegister=new DbLoginRegister(context);
         btRegister.setOnClickListener(view -> {
-            int age;
+            ;
             try {
                 age = Integer.parseInt(etAge.getText().toString());
             } catch (Exception e) {
@@ -64,25 +72,30 @@ public class RegistrationActivity extends AppCompatActivity {
                 etAge.setError("Enter correct age");
             } else if (!cbRegister.isChecked()) {
                 toastDislplay("Please agree the terms and conditions");
-            } else {
-                toastDislplay("Registration Success full ");
-            }
-            if (cbFootball.isChecked()) {
+            }if (cbFootball.isChecked()) {
                 toastDislplay("Foot Ball selected");
+                hobbies+="- football";
 
             }
             if (cbMovies.isChecked()) {
                 toastDislplay("Movie selected");
+                hobbies+="movie";
 
             }
             if (cbMusic.isChecked()) {
                 toastDislplay("Music selected");
+                hobbies+="music";
 
             }
             if (cbReading.isChecked()) {
                 toastDislplay("Reading selected");
+                hobbies+="reading";
 
+            } else {
+                toastDislplay("Registration Success full ");
+                register();
             }
+
 
 
         });
@@ -92,12 +105,15 @@ public class RegistrationActivity extends AppCompatActivity {
                 if (i == R.id.rtMale) {
                     Toast t = Toast.makeText(RegistrationActivity.this, "Male selected", Toast.LENGTH_LONG);
                     t.show();
+                    gender="male";
                 } else if (i == R.id.rtFemale) {
                     Toast t = Toast.makeText(RegistrationActivity.this, "Female selected ", Toast.LENGTH_LONG);
                     t.show();
+                    gender="female";
                 } else if (i == R.id.rtOther) {
                     Toast t = Toast.makeText(RegistrationActivity.this, "Other selected", Toast.LENGTH_LONG);
                     t.show();
+                    gender="others";
                 }
             }
         });
@@ -120,6 +136,23 @@ public class RegistrationActivity extends AppCompatActivity {
                 datePickerDialog.show();
             }
         });
+
+
+    }
+
+    private void register() {
+        LoginRegistrationModel mLoginRegistrationModel=new LoginRegistrationModel();
+        mLoginRegistrationModel.setGender(gender);
+        mLoginRegistrationModel.setHobbies(hobbies);
+        mLoginRegistrationModel.setUsername(etEmail.getText().toString().trim());
+        mLoginRegistrationModel.setPassword(etPass.getText().toString().trim());
+        mLoginRegistrationModel.setPhone(etPhone.getText().toString().trim());
+        mLoginRegistrationModel.setDob(etDob.getText().toString().trim());
+        mLoginRegistrationModel.setEmail(etEmail.getText().toString().trim());
+        mLoginRegistrationModel.setAddress(etAddress.getText().toString());
+        mLoginRegistrationModel.setAge(age);
+        mDbLoginRegister.insertIntoRegistration(mLoginRegistrationModel);
+
 
 
     }
