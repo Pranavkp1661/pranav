@@ -176,6 +176,7 @@ public class RegistrationActivity extends AppCompatActivity {
         LoginRegistrationModel mLoginRegistrationModel = new LoginRegistrationModel();
         mLoginRegistrationModel.setGender(gender);
         mLoginRegistrationModel.setHobbies(hobbies);
+        mLoginRegistrationModel.setName(etName.getText().toString().trim());
         mLoginRegistrationModel.setUsername(etEmail.getText().toString().trim());
         mLoginRegistrationModel.setPassword(etPass.getText().toString().trim());
         mLoginRegistrationModel.setPhone(etPhone.getText().toString().trim());

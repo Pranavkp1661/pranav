@@ -2,6 +2,7 @@ package com.example.newtrainigproject.model;
 
 public class LoginRegistrationModel {
     private String username;
+    private String name;
     private String password;
     private String email;
     private String phone;
@@ -90,5 +91,13 @@ public class LoginRegistrationModel {
 
     public void setHobbies(String hobbies) {
         this.hobbies = hobbies;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }
