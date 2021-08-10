@@ -10,10 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NewTrainigProject">
         <activity
-            android:name=".MainRegister"
+            android:name=".HomePageActivity"
+            android:exported="true" />
+        <activity
+            android:name=".RegistrationActivity"
             android:exported="true" />
         <activity
             android:name=".RegisterActivity"
+
             android:exported="true" />
         <activity
             android:name=".MainActivity"
