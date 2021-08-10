@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -22,13 +23,14 @@ public class RegistrationActivity extends AppCompatActivity {
     int year;
     int month;
     int day;
-    int age=0;
-    String gender="nothing";
-    String hobbies="";
+    int age = 0;
+    String gender = "nothing";
+    String hobbies = "";
 
 
     Calendar myCalender = Calendar.getInstance();
     Context context;
+    DbLoginRegister mDbLoginRegister;
     private EditText etName;
     private EditText etPass;
     private EditText etEmail;
@@ -37,13 +39,16 @@ public class RegistrationActivity extends AppCompatActivity {
     private EditText etDob;
     private EditText etAge;
     private Button btRegister;
+    private Button btReset;
     private RadioGroup rgGender;
+    private RadioButton rtMale;
+    private RadioButton rtFemale;
+    private RadioButton rtOther;
     private CheckBox cbMusic;
     private CheckBox cbMovies;
     private CheckBox cbFootball;
     private CheckBox cbReading;
     private CheckBox cbRegister;
-    DbLoginRegister mDbLoginRegister;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +56,7 @@ public class RegistrationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_registration);
         context = this;
         init();
-        mDbLoginRegister=new DbLoginRegister(context);
+        mDbLoginRegister = new DbLoginRegister(context);
         btRegister.setOnClickListener(view -> {
             ;
             try {
@@ -72,30 +77,32 @@ public class RegistrationActivity extends AppCompatActivity {
                 etAge.setError("Enter correct age");
             } else if (!cbRegister.isChecked()) {
                 toastDislplay("Please agree the terms and conditions");
-            }if (cbFootball.isChecked()) {
+            }
+            if (cbFootball.isChecked()) {
                 toastDislplay("Foot Ball selected");
-                hobbies+="- football";
+                hobbies += "- football";
 
             }
             if (cbMovies.isChecked()) {
                 toastDislplay("Movie selected");
-                hobbies+="movie";
+                hobbies += " movie";
 
             }
             if (cbMusic.isChecked()) {
                 toastDislplay("Music selected");
-                hobbies+="music";
+                hobbies += " music";
 
             }
             if (cbReading.isChecked()) {
                 toastDislplay("Reading selected");
-                hobbies+="reading";
+                hobbies += " reading";
 
             } else {
                 toastDislplay("Registration Success full ");
                 register();
-            }
+                clearForm();
 
+            }
 
 
         });
@@ -105,15 +112,15 @@ public class RegistrationActivity extends AppCompatActivity {
                 if (i == R.id.rtMale) {
                     Toast t = Toast.makeText(RegistrationActivity.this, "Male selected", Toast.LENGTH_LONG);
                     t.show();
-                    gender="male";
+                    gender = "male";
                 } else if (i == R.id.rtFemale) {
                     Toast t = Toast.makeText(RegistrationActivity.this, "Female selected ", Toast.LENGTH_LONG);
                     t.show();
-                    gender="female";
+                    gender = "female";
                 } else if (i == R.id.rtOther) {
                     Toast t = Toast.makeText(RegistrationActivity.this, "Other selected", Toast.LENGTH_LONG);
                     t.show();
-                    gender="others";
+                    gender = "others";
                 }
             }
         });
@@ -129,19 +136,44 @@ public class RegistrationActivity extends AppCompatActivity {
                         myCalender.set(Calendar.DAY_OF_MONTH, day);
                         myCalender.set(Calendar.MONTH, month);
                         myCalender.set(Calendar.YEAR, year);
-                        etDob.setText( day + "/" + (month + 1) + "/" + year);
+                        etDob.setText(day + "/" + (month + 1) + "/" + year);
 
                     }
                 }, myCalender.get(Calendar.YEAR), myCalender.get(Calendar.MONTH), myCalender.get(Calendar.DAY_OF_MONTH));
                 datePickerDialog.show();
             }
         });
+        btReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clearForm();
+            }
+        });
 
 
     }
 
+    private void clearForm() {
+        etName.setText("");
+        etPass.setText("");
+        etEmail.setText("");
+        etPhone.setText("");
+        etAddress.setText("");
+        etAge.setText("");
+        etDob.setText("");
+        cbReading.setChecked(false);
+        cbMusic.setChecked(false);
+        cbMovies.setChecked(false);
+        cbFootball.setChecked(false);
+        cbRegister.setChecked(false);
+        rtFemale.setChecked(false);
+        rtOther.setChecked(false);
+        rtMale.setChecked(false);
+
+    }
+
     private void register() {
-        LoginRegistrationModel mLoginRegistrationModel=new LoginRegistrationModel();
+        LoginRegistrationModel mLoginRegistrationModel = new LoginRegistrationModel();
         mLoginRegistrationModel.setGender(gender);
         mLoginRegistrationModel.setHobbies(hobbies);
         mLoginRegistrationModel.setUsername(etEmail.getText().toString().trim());
@@ -152,7 +184,6 @@ public class RegistrationActivity extends AppCompatActivity {
         mLoginRegistrationModel.setAddress(etAddress.getText().toString());
         mLoginRegistrationModel.setAge(age);
         mDbLoginRegister.insertIntoRegistration(mLoginRegistrationModel);
-
 
 
     }
@@ -167,11 +198,15 @@ public class RegistrationActivity extends AppCompatActivity {
         etAge = findViewById(R.id.etAge);
         btRegister = findViewById(R.id.btRegister);
         rgGender = findViewById(R.id.rgGender);
+        rtMale = findViewById(R.id.rtMale);
+        rtFemale = findViewById(R.id.rtFemale);
+        rtOther = findViewById(R.id.rtOther);
         cbMusic = findViewById(R.id.cbMusic);
         cbMovies = findViewById(R.id.cbMovies);
         cbFootball = findViewById(R.id.cbFootball);
         cbRegister = findViewById(R.id.cbRegister);
         cbReading = findViewById(R.id.cbReading);
+        btReset=findViewById(R.id.btReset);
 
     }
 

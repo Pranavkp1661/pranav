@@ -19,7 +19,7 @@ public class DbLoginRegister {
     private static final String COl_DOB = "date_of_birth";
     private static final String COL_GENDER = "gender";
     private static final String COL_HOBBIES = "hobbies";
-    private static final String TABLE_REGISTRATION = "registration ";
+    private static final String TABLE_REGISTRATION = "registration";
 
     public static final String CREATE_TABLE_REGISTRATION = "create table if not exists " + TABLE_REGISTRATION +
             " ( " + COl_ID + " integer primary key autoincrement, " + COl_U_NAME + " text not null, " + COL_PASS + " text not null, " +
