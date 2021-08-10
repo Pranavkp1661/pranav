@@ -8,6 +8,10 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.example.newtrainigproject.model.LoginRegistrationModel;
 
+import java.util.ArrayList;
+import java.util.List;
+
+@SuppressLint("Range")
 public class DbLoginRegister {
     private static final String COl_ID = "_id";
     private static final String COL_NAME="name";
@@ -49,9 +53,8 @@ public class DbLoginRegister {
         values.put(COL_GENDER, mLoginRegistrationModel.getGender());
         values.put(COL_HOBBIES, mLoginRegistrationModel.getHobbies());
         sqReg.insert(TABLE_REGISTRATION, null, values);
+        sqReg.close();
     }
-
-    @SuppressLint("Range")
     public LoginRegistrationModel checkRegistration(String uname, String password) {
         LoginRegistrationModel mLoginRegistrationModel = new LoginRegistrationModel();
         SQLiteDatabase sqReg = dbRegistration.getReadableDatabase();
@@ -74,6 +77,32 @@ public class DbLoginRegister {
         }
         sqReg.close();
         return mLoginRegistrationModel;
+    }
+    public List<LoginRegistrationModel> getAllUsers(){
+        List<LoginRegistrationModel> modelList=new ArrayList<>();
+        SQLiteDatabase sqReg = dbRegistration.getReadableDatabase();
+        Cursor cursor = sqReg.rawQuery(" select * from " + TABLE_REGISTRATION,null);
+        if (cursor != null) {
+            if (cursor.moveToFirst()) {
+                do {
+                    LoginRegistrationModel mLoginRegistrationModel = new LoginRegistrationModel();
+                    mLoginRegistrationModel.setName(cursor.getString(cursor.getColumnIndex(COL_NAME)));
+                    mLoginRegistrationModel.setUsername(cursor.getString(cursor.getColumnIndex(COl_U_NAME)));
+                    mLoginRegistrationModel.setPassword(cursor.getString(cursor.getColumnIndex(COL_PASS)));
+                    mLoginRegistrationModel.setEmail(cursor.getString(cursor.getColumnIndex(COL_EMAIL)));
+                    mLoginRegistrationModel.setPhone(cursor.getString(cursor.getColumnIndex(COL_PHONE)));
+                    mLoginRegistrationModel.setAddress(cursor.getString(cursor.getColumnIndex(COL_ADDRESS)));
+                    mLoginRegistrationModel.setAge(cursor.getInt(cursor.getColumnIndex(COL_AGE)));
+                    mLoginRegistrationModel.setDob(cursor.getString(cursor.getColumnIndex(COl_DOB)));
+                    mLoginRegistrationModel.setGender(cursor.getString(cursor.getColumnIndex(COL_GENDER)));
+                    mLoginRegistrationModel.setHobbies(cursor.getString(cursor.getColumnIndex(COL_HOBBIES)));
+                    modelList.add(mLoginRegistrationModel);
+                }while (cursor.moveToNext());
+            }
+            cursor.close();
+        }
+        sqReg.close();
+        return modelList;
     }
 
 }

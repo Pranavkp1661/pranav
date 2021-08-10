@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
                     if(mLoginRegistrationModel.getName() != null){
                         Toast t = Toast.makeText(MainActivity.this, "login success", Toast.LENGTH_LONG);
                         t.show();
-                        startActivity(new Intent(MainActivity.this,HomePage.class));
+                        startActivity(new Intent(MainActivity.this, HomePageActivity.class));
                     }
                 }
             }

@@ -3,19 +3,16 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Ajay Test Apps/login test/pranav/app/src/main/res/layout/activity_home_page.xml" value="0.31851851851851853" />
+        <entry key="..\:/Ajay Test Apps/login test/pranav/app/src/main/res/layout/activity_registration.xml" value="0.31851851851851853" />
+        <entry key="..\:/Ajay Test Apps/login test/pranav/app/src/main/res/layout/users_view_layout.xml" value="0.31851851851851853" />
         <entry key="..\:/git test/pranavtestapp/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/git test/pranavtestapp/app/src/main/res/layout/activity_main_register.xml" value="0.165625" />
         <entry key="..\:/git test/pranavtestapp/app/src/main/res/layout/activity_register.xml" value="0.22" />
-        <entry key="..\:/pranav/pranavtestapp/app/src/main/res/layout/activity_main.xml" value="0.1796875" />
-        <entry key="..\:/pranav/pranavtestapp/app/src/main/res/layout/activity_registration.xml" value="0.16666666666666666" />
-        <entry key="..\:/test/pranavtestapp/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/test/pranavtestapp/app/src/main/res/layout/activity_main_register.xml" value="0.11548913043478261" />
-        <entry key="..\:/test/pranavtestapp/app/src/main/res/layout/activity_register.xml" value="0.1" />
-        <entry key="..\:/test/pranavtestapp/app/src/main/res/layout/activity_registration.xml" value="0.22" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

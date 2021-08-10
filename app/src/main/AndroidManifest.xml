@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NewTrainigProject">
         <activity
-            android:name=".HomePage"
+            android:name=".HomePageActivity"
             android:exported="true" />
         <activity
             android:name=".RegistrationActivity"
