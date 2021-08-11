@@ -52,6 +52,24 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvUserLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btAddData"
+            android:layout_weight="1"
+            android:layout_marginEnd="10dp"
+            android:text="@string/add_item" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btViewItem"
+            android:layout_weight="1"
+            android:text="@string/view_item"/>
+    </LinearLayout>
 
 </LinearLayout>

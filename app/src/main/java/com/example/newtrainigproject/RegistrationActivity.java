@@ -14,7 +14,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.newtrainigproject.database.DbLoginRegister;
+import com.example.newtrainigproject.database.TableLoginRegister;
 import com.example.newtrainigproject.model.LoginRegistrationModel;
 
 import java.util.Calendar;
@@ -30,7 +30,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
     Calendar myCalender = Calendar.getInstance();
     Context context;
-    DbLoginRegister mDbLoginRegister;
+    TableLoginRegister mTableLoginRegister;
     private EditText etName;
     private EditText etPass;
     private EditText etEmail;
@@ -56,7 +56,7 @@ public class RegistrationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_registration);
         context = this;
         init();
-        mDbLoginRegister = new DbLoginRegister(context);
+        mTableLoginRegister = new TableLoginRegister(context);
         btRegister.setOnClickListener(view -> {
             ;
             try {
@@ -184,7 +184,7 @@ public class RegistrationActivity extends AppCompatActivity {
         mLoginRegistrationModel.setEmail(etEmail.getText().toString().trim());
         mLoginRegistrationModel.setAddress(etAddress.getText().toString());
         mLoginRegistrationModel.setAge(age);
-        mDbLoginRegister.insertIntoRegistration(mLoginRegistrationModel);
+        mTableLoginRegister.insertIntoRegistration(mLoginRegistrationModel);
 
 
     }

@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NewTrainigProject">
         <activity
+            android:name=".ActivityViewItem"
+            android:exported="true" />
+        <activity
+            android:name=".ActivityAddItem"
+            android:exported="true" />
+        <activity
             android:name=".HomePageActivity"
             android:exported="true" />
         <activity

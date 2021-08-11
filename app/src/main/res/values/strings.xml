@@ -29,4 +29,15 @@
     <string name="home_email">Home Email</string>
     <string name="home_user_name">Home User Name</string>
     <string name="home_name">Home Name</string>
+    <string name="add_item">Add Item</string>
+    <string name="view_item">View Item</string>
+    <string name="add_content">Add Content</string>
+    <string name="district">District</string>
+    <string name="enter">Enter</string>
+    <string name="pin_code">Pin Code</string>
+    <string name="back">Back</string>
+    <string name="slnoview">SlNoView</string>
+    <string name="states_view">States View</string>
+    <string name="district_view">District View</string>
+    <string name="pin_code_view">Pin Code View</string>
 </resources>

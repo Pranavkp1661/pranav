@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActivityAddItem"
+    android:orientation="vertical"
+    android:background="@color/LightColor">
+
+
+    <TextView
+        android:id="@+id/tvAddItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="true"
+        android:gravity="center"
+        android:text="@string/add_content"
+        android:textSize="30sp"/>
+
+    <Spinner
+        android:id="@+id/spState"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etDistrict"
+        android:paddingStart="10dp"
+        android:hint="@string/district"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etPinCode"
+        android:paddingStart="10dp"
+        android:hint="@string/pin_code"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btEnter"
+        android:text="@string/enter"
+        android:layout_gravity="center"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btBack"
+        android:text="@string/back"
+        android:layout_gravity="center"/>
+</LinearLayout>

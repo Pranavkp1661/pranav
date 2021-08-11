@@ -11,7 +11,7 @@ import com.example.newtrainigproject.model.LoginRegistrationModel;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DbLoginRegister {
+public class TableLoginRegister {
     private static final String COl_ID = "_id";
     private static final String COL_NAME = "name";
     private static final String COl_U_NAME = "u_name";
@@ -30,12 +30,12 @@ public class DbLoginRegister {
             COL_EMAIL + " text not null, " + COL_ADDRESS + " text not null, " + COL_PHONE + " text not null, " + COL_AGE + " integer not null, "
             + COl_DOB + " text not null, " + COL_GENDER + " text not null, " + COL_HOBBIES + " text not null )";
     public static final String DROP_TABLE_REGISTRATION = " drop table if exists " + TABLE_REGISTRATION;
-    DbRegistration dbRegistration;
+    DataBaseHelper dbRegistration;
     Context context;
 
-    public DbLoginRegister(Context context) {
+    public TableLoginRegister(Context context) {
         this.context = context;
-        dbRegistration = new DbRegistration(context);
+        dbRegistration = new DataBaseHelper(context);
     }
 
     public void insertIntoRegistration(LoginRegistrationModel mLoginRegistrationModel) {

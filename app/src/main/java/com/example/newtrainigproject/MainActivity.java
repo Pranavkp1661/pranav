@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.newtrainigproject.database.DbLoginRegister;
+import com.example.newtrainigproject.database.TableLoginRegister;
 import com.example.newtrainigproject.model.LoginRegistrationModel;
 
 public class MainActivity extends AppCompatActivity {
@@ -18,19 +18,19 @@ public class MainActivity extends AppCompatActivity {
     EditText etPassword;
     Button btSubmit;
     TextView tvNewRegistration;
-    DbLoginRegister dbLoginRegister;
+    TableLoginRegister tableLoginRegister;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         initItems();
-        dbLoginRegister=new DbLoginRegister(this);
+        tableLoginRegister =new TableLoginRegister(this);
         btSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (checkdata()){
-                    LoginRegistrationModel mLoginRegistrationModel= dbLoginRegister.checkRegistration(etUser.getText().toString().trim(),etPassword.getText().toString().trim());
+                    LoginRegistrationModel mLoginRegistrationModel= tableLoginRegister.checkRegistration(etUser.getText().toString().trim(),etPassword.getText().toString().trim());
                     if(mLoginRegistrationModel.getName() != null){
                         Toast t = Toast.makeText(MainActivity.this, "login success", Toast.LENGTH_LONG);
                         t.show();
