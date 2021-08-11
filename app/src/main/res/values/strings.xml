@@ -25,4 +25,8 @@
     <string name="register">Register</string>
     <string name="new_registration">New Registration</string>
     <string name="reset">Reset</string>
+    <string name="slno">SlNo</string>
+    <string name="home_email">Home Email</string>
+    <string name="home_user_name">Home User Name</string>
+    <string name="home_name">Home Name</string>
 </resources>

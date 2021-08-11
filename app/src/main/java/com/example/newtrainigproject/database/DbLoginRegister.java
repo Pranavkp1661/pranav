@@ -8,9 +8,12 @@ import android.database.sqlite.SQLiteDatabase;
 
 import com.example.newtrainigproject.model.LoginRegistrationModel;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DbLoginRegister {
     private static final String COl_ID = "_id";
-    private static final String COL_NAME="name";
+    private static final String COL_NAME = "name";
     private static final String COl_U_NAME = "u_name";
     private static final String COL_PASS = "password";
     private static final String COL_EMAIL = "email";
@@ -38,7 +41,7 @@ public class DbLoginRegister {
     public void insertIntoRegistration(LoginRegistrationModel mLoginRegistrationModel) {
         SQLiteDatabase sqReg = dbRegistration.getWritableDatabase();
         ContentValues values = new ContentValues();
-        values.put(COL_NAME,mLoginRegistrationModel.getName());
+        values.put(COL_NAME, mLoginRegistrationModel.getName());
         values.put(COl_U_NAME, mLoginRegistrationModel.getUsername());
         values.put(COL_PASS, mLoginRegistrationModel.getPassword());
         values.put(COL_EMAIL, mLoginRegistrationModel.getEmail());
@@ -76,4 +79,32 @@ public class DbLoginRegister {
         return mLoginRegistrationModel;
     }
 
+    @SuppressLint("Range")
+    public List<LoginRegistrationModel> getAllUser() {
+        List<LoginRegistrationModel> modelList = new ArrayList<>();
+        SQLiteDatabase sqReg = dbRegistration.getReadableDatabase();
+        Cursor cursor = sqReg.rawQuery(" select * from " + TABLE_REGISTRATION, null);
+        if (cursor != null) {
+            if (cursor.moveToFirst()) {
+                do {
+                    LoginRegistrationModel mLoginRegistrationModel = new LoginRegistrationModel();
+                    mLoginRegistrationModel.setName(cursor.getString(cursor.getColumnIndex(COL_NAME)));
+                    mLoginRegistrationModel.setUsername(cursor.getString(cursor.getColumnIndex(COl_U_NAME)));
+                    mLoginRegistrationModel.setPassword(cursor.getString(cursor.getColumnIndex(COL_PASS)));
+                    mLoginRegistrationModel.setEmail(cursor.getString(cursor.getColumnIndex(COL_EMAIL)));
+                    mLoginRegistrationModel.setPhone(cursor.getString(cursor.getColumnIndex(COL_PHONE)));
+                    mLoginRegistrationModel.setAddress(cursor.getString(cursor.getColumnIndex(COL_ADDRESS)));
+                    mLoginRegistrationModel.setAge(cursor.getInt(cursor.getColumnIndex(COL_AGE)));
+                    mLoginRegistrationModel.setDob(cursor.getString(cursor.getColumnIndex(COl_DOB)));
+                    mLoginRegistrationModel.setGender(cursor.getString(cursor.getColumnIndex(COL_GENDER)));
+                    mLoginRegistrationModel.setHobbies(cursor.getString(cursor.getColumnIndex(COL_HOBBIES)));
+                    modelList.add(mLoginRegistrationModel);
+                }while (cursor.moveToNext());
+            }
+            cursor.close();
+        }
+        return modelList;
+
+
+    }
 }
