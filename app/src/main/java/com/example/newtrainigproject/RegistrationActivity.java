@@ -20,17 +20,15 @@ import com.example.newtrainigproject.model.LoginRegistrationModel;
 import java.util.Calendar;
 
 public class RegistrationActivity extends AppCompatActivity {
-    int year;
     int month;
     int day;
     int age = 0;
     String gender = "nothing";
     String hobbies = "";
-
-
     Calendar myCalender = Calendar.getInstance();
     Context context;
     TableLoginRegister mTableLoginRegister;
+    private int year;
     private EditText etName;
     private EditText etPass;
     private EditText etEmail;
@@ -207,7 +205,7 @@ public class RegistrationActivity extends AppCompatActivity {
         cbFootball = findViewById(R.id.cbFootball);
         cbRegister = findViewById(R.id.cbRegister);
         cbReading = findViewById(R.id.cbReading);
-        btReset=findViewById(R.id.btReset);
+        btReset = findViewById(R.id.btReset);
 
     }
 
