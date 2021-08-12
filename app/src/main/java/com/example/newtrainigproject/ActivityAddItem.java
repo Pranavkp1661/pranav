@@ -67,7 +67,11 @@ public class ActivityAddItem extends AppCompatActivity implements AdapterView.On
             etDistrict.setError("Enter the District Name");
         }else if (etPinCode.getText().toString().equals("")){
             etPinCode.setError("Enter the Pin Code");
-        }else{
+        }else if(mTableAddItem.checkValidation(spinnerValue,etDistrict.getText().toString())) {
+            Toast.makeText(context, "item already in table", Toast.LENGTH_LONG).show();
+            itemClear();
+        }
+            else{
             Toast.makeText(context,"Item Entered",Toast.LENGTH_SHORT).show();
             itemAdd();
             itemClear();

@@ -50,8 +50,21 @@ public class TableAddItem {
                     modelList.add(mAddItemModel);
                 }while (cursor.moveToNext());
             }
+            cursor.close();
         }
-        cursor.close();
         return modelList;
+    }
+    public boolean checkValidation(String state,String district){
+        boolean validation=false;
+        SQLiteDatabase sqItem=dbRegistration.getWritableDatabase();
+        Cursor cursor =sqItem.rawQuery(" select * from " + TABLE_ITEM + " where " + COL_STATE + " = \"" + state + "\" and " + COL_DISTRICT + " = \"" + district + "\"",null);
+        if (cursor!=null){
+            if (cursor.moveToFirst()){
+                validation=true;
+            }
+            cursor.close();
+        }
+        sqItem.close();
+        return validation;
     }
 }
