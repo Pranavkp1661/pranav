@@ -40,4 +40,8 @@
     <string name="states_view">States View</string>
     <string name="district_view">District View</string>
     <string name="pin_code_view">Pin Code View</string>
+    <string name="add_spinner">Add Spinner</string>
+    <string name="spinner_values">Spinner Values</string>
+    <string name="enter_the_state_name">Enter the State Name</string>
+    <string name="enter_spinner_value">Enter Spinner Value</string>
 </resources>

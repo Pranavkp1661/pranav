@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NewTrainigProject">
         <activity
+            android:name=".ActivityAddSpinner"
+            android:exported="true" />
+        <activity
             android:name=".ActivityViewItem"
             android:exported="true" />
         <activity
