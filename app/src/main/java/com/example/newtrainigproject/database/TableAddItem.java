@@ -20,6 +20,7 @@ public class TableAddItem {
 
     public static final String CREATE_TABLE_ITEM=" create table if not exists " + TABLE_ITEM + " ( " + COL_ID + " integer primary key autoincrement, "
             + COL_STATE + " text not null, " + COL_DISTRICT + " text not null, " + COL_PIN + " integer not null )";
+    public static final String DROP_TABLE_ITEM=" drop table if exists " + TABLE_ITEM;
     DataBaseHelper dbRegistration;
     Context context;
     public TableAddItem(Context context){

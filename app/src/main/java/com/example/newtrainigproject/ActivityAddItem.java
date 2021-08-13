@@ -14,7 +14,12 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.newtrainigproject.database.TableAddItem;
+import com.example.newtrainigproject.database.TableAddSpinnerValue;
 import com.example.newtrainigproject.model.AddItemModel;
+import com.example.newtrainigproject.model.AddSpinnerValueModel;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ActivityAddItem extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     String[] states={"Kerala","karnataka","Tamilnadu","Jammu & kashmir"};
@@ -25,6 +30,9 @@ public class ActivityAddItem extends AppCompatActivity implements AdapterView.On
     String spinnerValue="";
     Button btBack;
     TableAddItem mTableAddItem;
+    TableAddSpinnerValue tableAddSpinnerValue;
+    List<AddSpinnerValueModel> addSpinnerValueModelList=new ArrayList<>();
+    List<String> stringStates=new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,22 +46,18 @@ public class ActivityAddItem extends AppCompatActivity implements AdapterView.On
         btBack=findViewById(R.id.btBack);
         spState=findViewById(R.id.spState);
         spState.setOnItemSelectedListener(this);
-        ArrayAdapter<String> arrayAdapter=new ArrayAdapter<>(context,android.R.layout.simple_spinner_item,states);
+        tableAddSpinnerValue=new TableAddSpinnerValue(context);
+        btEnter.setOnClickListener(view -> itemCheck());
+        btBack.setOnClickListener(view -> startActivity(new Intent(context,HomePageActivity.class)));
+        addSpinnerValueModelList=tableAddSpinnerValue.getSpinner();
+        stringStates.clear();
+        for(int i=0;i<addSpinnerValueModelList.size();i++){
+            AddSpinnerValueModel valueModel=addSpinnerValueModelList.get(i);
+            stringStates.add(valueModel.getSp_name());
+        }
+        ArrayAdapter<String> arrayAdapter=new ArrayAdapter<>(context,android.R.layout.simple_spinner_item,stringStates);
         arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spState.setAdapter(arrayAdapter);
-        btEnter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                itemCheck();
-
-            }
-        });
-        btBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(context,HomePageActivity.class));
-            }
-        });
 
     }
 
@@ -90,7 +94,7 @@ public class ActivityAddItem extends AppCompatActivity implements AdapterView.On
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
         Toast.makeText(context,states[i]+"Selected",Toast.LENGTH_LONG).show();
-spinnerValue=states[i];
+spinnerValue=addSpinnerValueModelList.get(i).getSp_name();
     }
 
     @Override
