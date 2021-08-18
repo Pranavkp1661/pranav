@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Text_view_Login" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor" >@color/white</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:fontFamily">@font/myridepro_bold</item>
+
+    </style>
+    <style name="Edit_Text_Login" parent="Widget.AppCompat.EditText">
+        <item name="android:textColorHint">@color/Grey</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:drawableTint">@color/black</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:paddingTop">2dp</item>
+        <item name="android:paddingBottom">2dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:imeOptions">flagNoExtractUi</item>
+        <item name="android:background">@drawable/shape_edit_text_login</item>
+    </style>
+    <style name="Button_Login" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/shape_button</item>
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:textColor" >@color/white</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+    <style name="Text_view_Registration" parent="Widget.AppCompat.TextView">
+        <item name="android:textColor" >@color/black</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:fontFamily">@font/myriadpro_condit</item>
+    </style>
+    <style name="Edit_Text_Registration" parent="Widget.AppCompat.EditText">
+        <item name="android:textColorHint">@color/Grey</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:drawableTint">@color/black</item>
+        <item name="android:paddingStart">10dp</item>
+        <item name="android:paddingEnd">10dp</item>
+        <item name="android:imeOptions">flagNoExtractUi</item>
+        <item name="android:paddingTop">2dp</item>
+        <item name="android:paddingBottom">2dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:background">@drawable/shape_edit_text_registration</item>
+    </style>
+
+</resources>

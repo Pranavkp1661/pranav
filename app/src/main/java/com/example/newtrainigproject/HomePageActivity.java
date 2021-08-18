@@ -46,19 +46,19 @@ public class HomePageActivity extends AppCompatActivity {
         btAddData.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(context,ActivityAddItem.class));
+                startActivity(new Intent(context, AddItemActivity.class));
             }
         });
         btViewItem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(context,ActivityViewItem.class));
+                startActivity(new Intent(context, ViewItemActivity.class));
             }
         });
         btAddSpinner.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(context,ActivityAddSpinner.class));
+                startActivity(new Intent(context, AddSpinnerActivity.class));
             }
         });
     }

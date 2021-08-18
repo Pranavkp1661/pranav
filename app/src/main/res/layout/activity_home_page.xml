@@ -57,6 +57,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btAddSpinner"
+            style="@style/Button_Login"
             android:text="@string/add_spinner"
             android:layout_weight="1"
             android:layout_marginEnd="10dp"/>
@@ -64,6 +65,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/btAddData"
+            style="@style/Button_Login"
             android:layout_weight="1"
             android:layout_marginEnd="10dp"
             android:text="@string/add_item" />
@@ -72,6 +74,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/btViewItem"
             android:layout_weight="1"
+            style="@style/Button_Login"
             android:text="@string/view_item"/>
     </LinearLayout>
 

@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.newtrainigproject.database.TableLoginRegister;
 import com.example.newtrainigproject.model.LoginRegistrationModel;
 
-public class MainActivity extends AppCompatActivity {
+public class LoginActivity extends AppCompatActivity {
     EditText etUser;
     EditText etPassword;
     Button btSubmit;
@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
         initItems();
         tableLoginRegister =new TableLoginRegister(this);
         btSubmit.setOnClickListener(new View.OnClickListener() {
@@ -32,9 +32,9 @@ public class MainActivity extends AppCompatActivity {
                 if (checkdata()){
                     LoginRegistrationModel mLoginRegistrationModel= tableLoginRegister.checkRegistration(etUser.getText().toString().trim(),etPassword.getText().toString().trim());
                     if(mLoginRegistrationModel.getName() != null){
-                        Toast t = Toast.makeText(MainActivity.this, "login success", Toast.LENGTH_LONG);
+                        Toast t = Toast.makeText(LoginActivity.this, "login success", Toast.LENGTH_LONG);
                         t.show();
-                        startActivity(new Intent(MainActivity.this, HomePageActivity.class));
+                        startActivity(new Intent(LoginActivity.this, HomePageActivity.class));
                     }
                 }
             }

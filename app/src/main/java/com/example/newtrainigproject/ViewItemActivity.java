@@ -15,7 +15,7 @@ import com.example.newtrainigproject.model.AddItemModel;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ActivityViewItem extends AppCompatActivity {
+public class ViewItemActivity extends AppCompatActivity {
     RecyclerView rvViewItem;
     TableAddItem mTableAddItem;
     Context context;

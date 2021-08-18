@@ -41,7 +41,7 @@ public class TableAddSpinnerValue {
             if (cursor.moveToFirst()){
                 do {
                     AddSpinnerValueModel addSpinnerValueModel = new AddSpinnerValueModel();
-                    addSpinnerValueModel.setSp_name(cursor.getString(cursor.getColumnIndex(COl_SP_NAME)));
+                    addSpinnerValueModel.setSp_name(cursor.getString(  cursor.getColumnIndex(COl_SP_NAME)));
                     modelList.add(addSpinnerValueModel);
                 }while (cursor.moveToNext());
             }

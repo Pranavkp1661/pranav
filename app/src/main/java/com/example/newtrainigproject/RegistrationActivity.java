@@ -127,10 +127,10 @@ public class RegistrationActivity extends AppCompatActivity {
             public void onClick(View view) {
                 DatePickerDialog datePickerDialog = new DatePickerDialog(RegistrationActivity.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
-                    public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                        year = i;
-                        month = i1;
-                        day = i2;
+                    public void onDateSet(DatePicker datePicker, int yy, int mm, int dd) {
+                        year = yy;
+                        month = mm;
+                        day = dd;
                         myCalender.set(Calendar.DAY_OF_MONTH, day);
                         myCalender.set(Calendar.MONTH, month);
                         myCalender.set(Calendar.YEAR, year);

@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.newtrainigproject.database.TableAddSpinnerValue;
 import com.example.newtrainigproject.model.AddSpinnerValueModel;
 
-public class ActivityAddSpinner extends AppCompatActivity {
+public class AddSpinnerActivity extends AppCompatActivity {
     EditText etSpinnerValue;
     Button btEnterSpinner;
     Context context;

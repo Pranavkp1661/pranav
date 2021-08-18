@@ -10,13 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NewTrainigProject">
         <activity
-            android:name=".ActivityAddSpinner"
+            android:name=".AddSpinnerActivity"
             android:exported="true" />
         <activity
-            android:name=".ActivityViewItem"
+            android:name=".ViewItemActivity"
             android:exported="true" />
         <activity
-            android:name=".ActivityAddItem"
+            android:name=".AddItemActivity"
             android:exported="true" />
         <activity
             android:name=".HomePageActivity"
@@ -25,7 +25,7 @@
             android:name=".RegistrationActivity"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

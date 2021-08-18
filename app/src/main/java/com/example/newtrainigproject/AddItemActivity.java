@@ -21,7 +21,7 @@ import com.example.newtrainigproject.model.AddSpinnerValueModel;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ActivityAddItem extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class AddItemActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     String[] states={"Kerala","karnataka","Tamilnadu","Jammu & kashmir"};
     EditText etDistrict,etPinCode;
     Button btEnter;

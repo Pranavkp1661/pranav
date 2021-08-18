@@ -10,73 +10,61 @@
 
     <TextView
         android:id="@+id/tvRegistration"
+        style="@style/Text_view_Registration"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="@string/registration_form"
-        android:textAllCaps="true"
-        android:textSize="30sp" />
+        android:text="@string/registration_form" />
 
     <EditText
         android:id="@+id/etName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:drawableStart="@drawable/ic_baseline_person_24"
-        android:drawableTint="@color/black"
+        android:drawableStart="@drawable/ic_person"
+        style="@style/Edit_Text_Registration"
         android:ems="10"
         android:hint="@string/name"
-        android:imeOptions="flagNoExtractUi"
-        android:inputType="textPersonName"
-        android:paddingStart="10dp"
-        android:paddingEnd="10dp" />
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/etPass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:drawableStart="@drawable/ic_baseline_vpn_key_24"
-        android:drawableEnd="@drawable/ic_baseline_remove_red_eye_24"
-        android:drawableTint="@color/black"
+        android:drawableStart="@drawable/ic_key"
+        android:drawableEnd="@drawable/ic_eye"
+        style="@style/Edit_Text_Registration"
         android:ems="10"
         android:hint="@string/password"
-        android:imeOptions="flagNoExtractUi"
         android:inputType="textPassword"
-        android:paddingStart="10dp"
-        android:paddingEnd="10dp" />
+       />
 
     <EditText
         android:id="@+id/etEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:drawableStart="@drawable/ic_baseline_email_24"
-        android:drawableTint="@color/black"
+        style="@style/Edit_Text_Registration"
+        android:drawableStart="@drawable/ic_email"
         android:ems="10"
         android:hint="@string/email"
-        android:imeOptions="flagNoExtractUi"
         android:inputType="textEmailAddress"
-        android:paddingStart="10dp"
-        android:paddingEnd="10dp" />
+       />
 
     <EditText
         android:id="@+id/etPhone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:drawableStart="@drawable/ic_baseline_phone_24"
-        android:drawableTint="@color/black"
+        style="@style/Edit_Text_Registration"
+        android:drawableStart="@drawable/ic_phone"
         android:ems="10"
         android:hint="@string/phone_number"
-        android:imeOptions="flagNoExtractUi"
-        android:inputType="phone"
-        android:paddingStart="10dp"
-        android:paddingEnd="10dp" />
+        android:inputType="phone" />
 
     <EditText
         android:id="@+id/etAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        style="@style/Edit_Text_Registration"
         android:ems="10"
         android:hint="@string/address"
-        android:imeOptions="flagNoExtractUi"
         android:inputType="textPersonName"
         android:lines="5" />
 
@@ -86,7 +74,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/age"
-        android:imeOptions="flagNoExtractUi"
+        style="@style/Edit_Text_Registration"
         android:inputType="number" />
 
     <EditText
@@ -94,15 +82,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:clickable="false"
-        android:drawableStart="@drawable/ic_baseline_calendar_today_24"
-        android:drawableTint="@color/black"
+        android:drawableStart="@drawable/ic_calendar"
         android:ems="10"
         android:focusable="false"
         android:hint="Date Of Birth"
-        android:imeOptions="flagNoExtractUi"
         android:inputType="number"
-        android:paddingStart="10dp"
-        android:paddingEnd="10dp" />
+        style="@style/Edit_Text_Registration"/>
 
     <TextView
         android:id="@+id/tvGender"
