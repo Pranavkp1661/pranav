@@ -49,7 +49,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/etAddressLocation"
         style="@style/style_text_view_location"
-        android:editable="false"/>
+        android:enabled="false"/>
     <View
         android:layout_width="match_parent"
         android:layout_height="@dimen/dime_20dp"/>

@@ -78,7 +78,7 @@ public class LocationActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 etAddressLocation.setFocusable(true);
-                etAddressLocation.setClickable(true);
+                etAddressLocation.setEnabled(true);
                 Toast.makeText(context,"Editing Enabled",Toast.LENGTH_LONG).show();
             }
         });
