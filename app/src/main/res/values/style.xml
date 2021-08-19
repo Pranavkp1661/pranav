@@ -48,5 +48,11 @@
         <item name="android:paddingRight">10dp</item>
         <item name="android:background">@drawable/shape_edit_text_registration</item>
     </style>
+    <style name="style_text_view_location" parent="Widget.AppCompat.TextView">
+        <item name="android:background">@drawable/shape_text_view</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 
 </resources>

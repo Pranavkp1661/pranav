@@ -12,4 +12,5 @@
     <color name="reg_bg_color">#D4F7CC</color>
     <color name="LightColor">#DBC5F1</color>
     <color name="Light_yellow">#EDD6A8</color>
+    <color name="locationBg">#C8F4F0</color>
 </resources>

@@ -44,4 +44,8 @@
     <string name="spinner_values">Spinner Values</string>
     <string name="enter_the_state_name">Enter the State Name</string>
     <string name="enter_spinner_value">Enter Spinner Value</string>
+    <string name="get_location">Get Location</string>
+    <string name="click_here_for_location">Click Here For Location</string>
+    <string name="txt_refresh_location">Refresh Location</string>
+    <string name="txt_edit_address">Edit Address</string>
 </resources>

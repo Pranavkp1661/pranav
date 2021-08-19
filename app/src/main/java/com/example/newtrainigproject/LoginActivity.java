@@ -1,6 +1,9 @@
 package com.example.newtrainigproject;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,14 +12,20 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.example.newtrainigproject.database.TableLoginRegister;
 import com.example.newtrainigproject.model.LoginRegistrationModel;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class LoginActivity extends AppCompatActivity {
     EditText etUser;
     EditText etPassword;
     Button btSubmit;
+    Button btLocation;
     TextView tvNewRegistration;
     TableLoginRegister tableLoginRegister;
 
@@ -25,6 +34,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         initItems();
+        checkAndRequestPermissions();
         tableLoginRegister =new TableLoginRegister(this);
         btSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,6 +52,12 @@ public class LoginActivity extends AppCompatActivity {
         tvNewRegistration.setOnClickListener(view -> {
             startActivity(new Intent(this,RegistrationActivity.class));
         });
+        btLocation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this,LocationActivity.class));
+            }
+        });
 
     }
 
@@ -50,6 +66,7 @@ public class LoginActivity extends AppCompatActivity {
         etPassword = findViewById(R.id.etPassword);
         btSubmit = findViewById(R.id.btSubmit);
         tvNewRegistration=findViewById(R.id.tvNewRegistration);
+        btLocation=findViewById(R.id.btLocation);
 
     }
 
@@ -69,5 +86,24 @@ public class LoginActivity extends AppCompatActivity {
         }
         return valid;
 
+    }
+    private void checkAndRequestPermissions() {
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            List<String> PERMISSIONS = new ArrayList<>();
+            PERMISSIONS.add(android.Manifest.permission.ACCESS_COARSE_LOCATION);
+            PERMISSIONS.add(Manifest.permission.ACCESS_FINE_LOCATION);
+            if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                PERMISSIONS.add(Manifest.permission.ACCESS_BACKGROUND_LOCATION);
+            }
+            List<String> listPermissionsNeeded = new ArrayList<>();
+            for (String permission : PERMISSIONS) {
+                if (ContextCompat.checkSelfPermission(this, permission) != PackageManager.PERMISSION_GRANTED) {
+                    listPermissionsNeeded.add(permission);
+                }
+            }
+            if (!listPermissionsNeeded.isEmpty()) {
+                ActivityCompat.requestPermissions(this, listPermissionsNeeded.toArray(new String[0]), 1);
+            }
+        }
     }
 }
