@@ -27,6 +27,7 @@ public class HomePageActivity extends AppCompatActivity {
     Button btAddData;
     Button btViewItem;
     Button btAddSpinner;
+    Button btViewListRetrofit;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +36,7 @@ public class HomePageActivity extends AppCompatActivity {
         btAddData=findViewById(R.id.btAddData);
         btViewItem=findViewById(R.id.btViewItem);
         btAddSpinner=findViewById(R.id.btAddSpinner);
+        btViewListRetrofit=findViewById(R.id.btViewListRetrofit);
         rvUserLayout=findViewById(R.id.rvUserLayout);
         mTableLoginRegister =new TableLoginRegister(context);
         rvUserAdapter=new RvUserAdapter(context,loginRegistrationModelList);
@@ -59,6 +61,12 @@ public class HomePageActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(context, AddSpinnerActivity.class));
+            }
+        });
+        btViewListRetrofit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(context,RetrofitListActivity.class));
             }
         });
     }

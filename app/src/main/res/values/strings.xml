@@ -48,4 +48,12 @@
     <string name="click_here_for_location">Click Here For Location</string>
     <string name="txt_refresh_location">Refresh Location</string>
     <string name="txt_edit_address">Edit Address</string>
+    <string name="txt_display_list">Display List</string>
+    <string name="txt_character_name">Character Name</string>
+    <string name="txt_real_name">Real Name</string>
+    <string name="txt_team">Team</string>
+    <string name="txt_first_appearance">First Appearance</string>
+    <string name="txt_created_by">Created By</string>
+    <string name="txt_publisher">Publisher</string>
+    <string name="txt_bio">Bio</string>
 </resources>
