@@ -1,4 +1,4 @@
-package com.example.newtrainigproject;
+package com.example.newtrainigproject.retrofit;
 
 import com.example.newtrainigproject.model.RetrofitListModel;
 

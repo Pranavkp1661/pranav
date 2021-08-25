@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.example.newtrainigproject.adapters.RvRetrofitListAdapter;
 import com.example.newtrainigproject.model.RetrofitListModel;
+import com.example.newtrainigproject.retrofit.RetrofitClientApi;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,7 +43,7 @@ public class RetrofitListActivity extends AppCompatActivity {
     }
 
     private void getSuperHero() {
-        Call<List<RetrofitListModel>> call=RetrofitClientApi.getInstance().getMyApi().getSuperHero();
+        Call<List<RetrofitListModel>> call= RetrofitClientApi.getInstance().getMyApi().getSuperHero();
         call.enqueue(new Callback<List<RetrofitListModel>>() {
             @Override
             public void onResponse(@NonNull Call<List<RetrofitListModel>> call, @NonNull Response<List<RetrofitListModel>> response) {
